@@ -16,19 +16,21 @@ else:
 	else:
 		maxdays = 28
 
-if day > maxdays:
+if day and (day < 1 or day > maxdays):
 	flag = False
+if flag:
+	day = day +1
 
-day = day +1
 if day > maxdays:
 	day = 1
 	month = month + 1
+
 if month > 12:
 	month = 1
 	year = year + 1
-
 if flag:
-	print(f"{day:02d}-{month:02d},-{year}")
+	print(f"{day:02d}-{month:02d}-{year}")
 else:
-	print("Invalid date")
+	print("Invalid Date")
+
 
